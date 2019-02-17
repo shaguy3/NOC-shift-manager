@@ -7,4 +7,9 @@ Things the app will consider:
 * Global rule handling (no two shift in a row, no more than two nights a week, etc...)
 * Worker specific rules (doesnt work nights, doesnt work weekends, etc...)
 * Equal spread in the salary between the workers
-* 
+
+
+version control:
+- Made initial packages.
+ Classes will contain the WorkWeek and Worker classes.
+ Rules will contain the rule handler, and the Global rules and Worker specific rules in json form.
