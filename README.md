@@ -10,6 +10,9 @@ Things the app will consider:
 
 
 version control:
-- Made initial packages.
+- ver 0.01: Made initial packages.
  Classes will contain the WorkWeek and Worker classes.
  Rules will contain the rule handler, and the Global rules and Worker specific rules in json form.
+- ver 0.02: Completed the WorkWeek class for now. it has an id, a start and end dates, and the weekly schedule
+that starts empty. Made two methods: get_last_sunday() and get_next_saturday(), that do what they say on the tin.
+Made an initial Worker class.
