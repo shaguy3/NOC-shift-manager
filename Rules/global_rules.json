@@ -1,1 +1,16 @@
-{}
+{
+  "Hard rules": {
+    "at least one operator at each shift": true,
+    "Adjacent shifts": false,
+    "Night after morning": false
+  },
+
+  "Soft rules": {
+    "At least two operators at Sebbag shifts": true,
+    "Number of shifts": 4,
+    "Night cap": 2,
+    "8-8-8": false,
+    "Works nights": true,
+    "Works weekends": true
+  }
+}

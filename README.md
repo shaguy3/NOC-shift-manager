@@ -16,3 +16,5 @@ version control:
 - ver 0.02: Completed the WorkWeek class for now. it has an id, a start and end dates, and the weekly schedule
 that starts empty. Made two methods: get_last_sunday() and get_next_saturday(), that do what they say on the tin.
 Made an initial Worker class.
+- ver 0.03: Started work on the Worker class. it will enable control over the workers.json file.
+the goal is to be able to create new workers and add them to the json file,remove them from it and edit their rules and properties.
