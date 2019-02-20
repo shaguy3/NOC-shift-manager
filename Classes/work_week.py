@@ -42,6 +42,9 @@ class WorkWeek:
             string_to_return += str(self.schedule[i])
         return string_to_return
 
+    def save_work_week(self):
+        pass
+
     def add_to_shift(self, shift_number, *workers):
         for worker in workers:
             self.schedule[shift_number].append(worker)
