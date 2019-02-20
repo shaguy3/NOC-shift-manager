@@ -18,3 +18,5 @@ that starts empty. Made two methods: get_last_sunday() and get_next_saturday(), 
 Made an initial Worker class.
 - ver 0.03: Started work on the Worker class. it will enable control over the workers.json file.
 the goal is to be able to create new workers and add them to the json file,remove them from it and edit their rules and properties.
+- ver 0.04: Restructured the project. The Rules package is now the Database package.
+ It's purpose is to host the database and the db_interactions module that is responsible to interact with the databases.

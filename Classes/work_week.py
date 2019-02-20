@@ -19,11 +19,13 @@ class WorkWeek:
 
     id = 1
 
-    def __init__(self):
+    def __init__(self, schedule=None):
+        if schedule is None:
+            schedule = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]
         self.id = WorkWeek.id
         self.start_date = get_last_sunday()
         self.end_date = get_next_saturday()
-        self.schedule = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]
+        self.schedule = schedule
 
         WorkWeek.id += 1
 
