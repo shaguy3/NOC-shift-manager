@@ -14,5 +14,18 @@
     "Works nights": true,
     "Works weekends": true,
     "HOT Emp": false
+  },
+
+  "Shift payment": {
+    "HOT employees": {
+      "Day shift": 1,
+      "Night shift": 1.5,
+      "Weekend shift": 1.5
+    },
+    "Not HOT employees": {
+      "Day shift": 1,
+      "Night shift": 1.5,
+      "Weekend shift": 2.5
+    }
   }
 }

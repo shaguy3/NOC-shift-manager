@@ -20,3 +20,4 @@ Made an initial Worker class.
 the goal is to be able to create new workers and add them to the json file,remove them from it and edit their rules and properties.
 - ver 0.04: Restructured the project. The Rules package is now the Database package.
  It's purpose is to host the database and the db_interactions module that is responsible to interact with the databases.
+- ver 0.05: Continued work on db_interactions. the module can now interact (save and load) with the workers.json file and the work_weeks.json file.

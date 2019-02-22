@@ -1,33 +1,12 @@
-from datetime import date
-
-
-def get_last_sunday():
-    today = date.today()
-    ordinal_today = today.toordinal()
-    last_sunday_ordinal = ordinal_today - (ordinal_today % 7)
-    return date.fromordinal(last_sunday_ordinal)
-
-
-def get_next_saturday():
-    today = date.today()
-    ordinal_today = today.toordinal()
-    next_saturday_ordinal = ordinal_today - (ordinal_today % 7) + 6
-    return date.fromordinal(next_saturday_ordinal)
-
-
 class WorkWeek:
 
-    id = 1
-
-    def __init__(self, schedule=None):
+    def __init__(self, id, start_date, end_date, schedule=None):
         if schedule is None:
             schedule = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]
-        self.id = WorkWeek.id
-        self.start_date = get_last_sunday()
-        self.end_date = get_next_saturday()
+        self.id = id
+        self.start_date = start_date
+        self.end_date = end_date
         self.schedule = schedule
-
-        WorkWeek.id += 1
 
     def __repr__(self):
         string_to_return = 'Work week number {}. Start date: {}.  End date: {}.' \
@@ -44,9 +23,8 @@ class WorkWeek:
             string_to_return += str(self.schedule[i])
         return string_to_return
 
-    def save_work_week(self):
-        pass
+    def __getitem__(self, item):
+        return self.schedule[item]
 
-    def add_to_shift(self, shift_number, *workers):
-        for worker in workers:
-            self.schedule[shift_number].append(worker)
+    def __setitem__(self, key, value):
+        self.schedule[key] = value
