@@ -9,3 +9,9 @@ class Employee:
 
     def __repr__(self):
         return self.name
+
+    def __eq__(self, other):
+        if self.id == other.id:
+            return True
+        else:
+            return False

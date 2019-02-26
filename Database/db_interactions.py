@@ -47,7 +47,7 @@ def load_employee(name):
         for id, worker in workers.items():
             if worker['Name'] == name:
                 id = id
-                rules = worker['Database']
+                rules = worker['Rules']
                 return employee.Employee(id, name, rules=rules)
         return None
 
