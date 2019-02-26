@@ -22,26 +22,15 @@ def has_adjacent_shifts(last_week, this_week, cwd=os.getcwd()):
                     if emp_last == emp_this:
                         os.chdir(cwd)
                         return True
-        emps_this = emps_last
+        emps_last = emps_this
     os.chdir(cwd)
     return False
 
 
-os.chdir(os.path.join('..', 'Database'))
-test_week = work_week.WorkWeek(1, date.fromordinal(dbi.get_last_sunday().toordinal() - 7),
-                               date.fromordinal(dbi.get_next_saturday().toordinal() - 7))
-test_week_2 = work_week.WorkWeek(2, dbi.get_last_sunday(), dbi.get_next_saturday().toordinal())
-shamil = dbi.load_employee('Guy Shamilyan')
-yarden = dbi.load_employee('Yarden Yefet')
-heli = dbi.load_employee('Heli Kanade')
+# TODO: "at least one operator at each shift" handling
 
-test_week[20].append(shamil)
-test_week_2[0].append(yarden)
-test_week_2[0].append(heli)
-test_week_2[1].append(shamil)
+# TODO: "Night after morning" handling
 
-print(test_week[20])
-print(test_week_2[0])
-print(test_week_2[1])
+# TODO: "Maximum number of shifts" handling
 
-print(has_adjacent_shifts(test_week, test_week_2))
+# TODO: "Sof rules handling
