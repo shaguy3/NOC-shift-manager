@@ -21,7 +21,7 @@ def main():
     print(test_week_2[0])
     print(test_week_2[1])
 
-    print(has_adjacent_shifts(test_week, test_week_2))
+    print(no_adjacent_shifts(test_week, test_week_2))
 
 
 if __name__ == '__main__':

@@ -4,14 +4,13 @@ from datetime import date
 import os
 
 
-def has_adjacent_shifts(last_week, this_week, cwd=os.getcwd()):
-    os.chdir(os.path.join('..', 'Database'))
-    # last_week = dbi.load_last_week()
+def no_adjacent_shifts(last_week, this_week):
+    """documentation"""
+    # last_week = dbi.load_last_week()      When the rule handling is complete, this line will be relevant.
     for emp_last in last_week[20]:
         for emp_this in this_week[0]:
             if emp_last == emp_this:
-                os.chdir(cwd)
-                return True
+                return False
     for shift in this_week:
         if shift == this_week[0]:
             emps_last = shift
@@ -20,17 +19,47 @@ def has_adjacent_shifts(last_week, this_week, cwd=os.getcwd()):
             for emp_last in emps_last:
                 for emp_this in emps_this:
                     if emp_last == emp_this:
-                        os.chdir(cwd)
-                        return True
-        emps_last = emps_this
-    os.chdir(cwd)
-    return False
+                        return False
+        emps_last = shift
+    return True
 
 
-# TODO: "at least one operator at each shift" handling
+def at_least_one_operator_in_each_shift(this_week):
+    """documentation"""
+    for shift in this_week:
+        if not shift:
+            return False
+    return True
 
-# TODO: "Night after morning" handling
 
-# TODO: "Maximum number of shifts" handling
+def no_night_after_morning(this_week):
+    this_morning = this_week[0]
+    for i in range(1, 21):
+        if i % 3 == 0:
+            this_morning = this_week[i]
+        elif i % 3 == 2:
+            for emp_morning in this_morning:
+                for emp_this in this_week[i]:
+                    if emp_morning == emp_this:
+                        return False
+    return True
 
-# TODO: "Sof rules handling
+
+def no_more_than_maximum_shifts(this_week):
+    """documentation"""
+    max_shifts = dbi.load_global_rule('Maximum number of shifts')
+    shift_counters = {}
+    for shift in this_week:
+        for emp in shift:
+            if not str(emp.id) in shift_counters.keys():
+                shift_counters[str(emp.id)] = 1
+            else:
+                shift_counters[str(emp.id)] += 1
+            if shift_counters[str(emp.id)] > max_shifts:
+                return False
+    return True
+
+
+# TODO: "Soft rules handling
+def no_8_8_8(this_week):
+    pass
