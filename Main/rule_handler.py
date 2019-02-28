@@ -63,3 +63,7 @@ def no_more_than_maximum_shifts(this_week):
 # TODO: "Soft rules handling
 def no_8_8_8(this_week):
     pass
+
+
+if __name__ == '__main__':
+    pass
